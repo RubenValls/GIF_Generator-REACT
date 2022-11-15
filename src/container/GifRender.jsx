@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
+import PrintGif from './pure/printGif';
 
 const GifRender = (props) => {
     const [topic, setTopic] = useState('dog');
@@ -13,7 +14,7 @@ const GifRender = (props) => {
         .then(res => res.json())
         .then(response => {
         const {data} = response
-        const gif = data.map(image => image.images.downsized_medium.url)
+        const gif = data.map(image => image.images.downsized_large.url)
         if(gif[0]){
             setGifs(gif)
         }else{
@@ -33,12 +34,17 @@ const GifRender = (props) => {
             <section className="App-content">
                 <h1>Select a topic and quantity for a random GIF/s</h1>
                 {
-                    gifs.map(gif => <img src={gif}/>)
+                    <PrintGif gifs = {gifs}></PrintGif>
                 }
-                    
-                Topic: <input ref={inputRef} type="text" className="text-zone"></input>
-                Number of Gif<input ref={numberRef} type="number" min={1} max={100} className="text-zone"></input>
-                <button onClick={Click} className="text-zone">Generate!</button>
+                <div>
+                    Topic: <input ref={inputRef} type="text" className="text-zone"></input>
+                </div>
+                <div>
+                    Number of Gifs: <input ref={numberRef} type="number" min={1} max={100} className="text-zone"></input>
+                </div>
+                <div>
+                    <button onClick={Click} className="text-zone">Generate!</button>
+                </div>
             </section>
         </div>
     );
