@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='container-fluid bg-light'>
             <div className='row text-center p-2'>
                 <div className='col text-black d-flex justify-content-end align-items-center'><h5>Powered by: </h5></div>
-                <div className='col d-flex justify-content-left align-items-center'><img src = {url} alt = {description} width = '12%'></img></div>
+                <div className='col d-flex justify-content-left align-items-center'><img src = {url} alt = {description} width = '110px'></img></div>
             </div>
         </div>
     );
