@@ -10,7 +10,7 @@ const GifRender = (props) => {
     const numberRef = useRef(null);
 
     useEffect(() => {
-        const APIurl = `https://api.giphy.com/v1/gifs/search?api_key=WT6uDyLqdyizb6RFxmYVAszweIgWYXIh&q=${topic}&limit=${number}&offset=0&rating=g&lang=en`
+        const APIurl = `https://api.giphy.com/v1/gifs/search?api_key=WT6uDyLqdyizb6RFxmYVAszweIgWYXIh&q=${topic}&limit=${number}&offset=0&rating=r&lang=en`
         fetch(APIurl)
         .then(res => res.json())
         .then(response => {
