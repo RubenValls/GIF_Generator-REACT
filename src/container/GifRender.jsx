@@ -14,7 +14,7 @@ const GifRender = (props) => {
         .then(res => res.json())
         .then(response => {
         const {data} = response
-        const gif = data.map(image => image.images.downsized_small.url)
+        const gif = data.map(image => image.images.downsized.url)
         if(gif[0]){
             setGifs(gif)
         }else{
