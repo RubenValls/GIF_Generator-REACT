@@ -3,14 +3,15 @@ import PrintGif from './pure/printGif';
 import Title from './pure/title';
 
 const GifRender = (props) => {
-    const [topic, setTopic] = useState('dog');
+    let randomWords = require('random-words');
+    const [topic, setTopic] = useState(randomWords());
     const [number, setNumber] = useState('1');
     const [gifs, setGifs] = useState([]);
     const inputRef = useRef(null);
     const numberRef = useRef(null);
 
     useEffect(() => {
-        const APIurl = `https://api.giphy.com/v1/gifs/search?api_key=WT6uDyLqdyizb6RFxmYVAszweIgWYXIh&q=${topic}&limit=${number}&offset=0&rating=r&lang=en`
+        const APIurl = `https://api.giphy.com/v1/gifs/search?api_key=WT6uDyLqdyizb6RFxmYVAszweIgWYXIh&q=${topic}&limit=${number}&offset=0&rating=pg-13&lang=en`
         fetch(APIurl)
         .then(res => res.json())
         .then(response => {
