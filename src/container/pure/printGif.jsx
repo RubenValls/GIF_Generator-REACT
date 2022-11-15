@@ -10,7 +10,7 @@ const PrintGif = (props) => {
             props.gifs.map(gif => 
                 <div>
                     <h3>Gif {count = count + 1}:</h3>
-                    <img src={gif}/>
+                    <img src={gif} alt='gif' width='100%'/>
                 </div>
                 )
         }
