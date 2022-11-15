@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import PrintGif from './pure/printGif';
+import Title from './pure/title';
 
 const GifRender = (props) => {
     const [topic, setTopic] = useState('dog');
@@ -30,20 +31,22 @@ const GifRender = (props) => {
     }
     
     return (
-        <div className="App">
+        <div className="App container">
             <section className="App-content">
-                <h1>Select a topic and quantity for a random GIF/s</h1>
+                <Title/>
                 {
                     <PrintGif gifs = {gifs}></PrintGif>
                 }
-                <div>
-                    Topic: <input ref={inputRef} type="text" className="text-zone"></input>
+                <div className='row mt-2'>
+                    <h4 className='d-flex'>Topic:</h4>
+                    <input ref={inputRef} type="text" className="text-zone form-control"></input>
+                </div>
+                <div className='row'>
+                    <h4 className='d-flex'>Number of Gifs:</h4> 
+                    <input ref={numberRef} type="number" min={1} max={100} className="text-zone form-control"></input>
                 </div>
                 <div>
-                    Number of Gifs: <input ref={numberRef} type="number" min={1} max={100} className="text-zone"></input>
-                </div>
-                <div>
-                    <button onClick={Click} className="text-zone">Generate!</button>
+                    <button type="button" onClick={Click} className="btn btn-outline-light btn-lg mt-2 mb-2">Generate!</button>
                 </div>
             </section>
         </div>
