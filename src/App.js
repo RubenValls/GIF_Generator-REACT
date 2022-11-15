@@ -6,7 +6,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 function App() {
 
   return (
-    <GifRender></GifRender>
+    <div className='container-fluid App-content'>
+      <div className='container'>
+        <GifRender></GifRender>
+      </div>
+    </div>
   );
 }
 
